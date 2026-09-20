@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module"src="https://pyscript.net/releases/2026.7.3/core.js">
+    </script>
+
+    <title>Receipt Generator</title>
+</head>
+<body>
+
+    <style>
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+                'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+            background-image: url("https://i.pinimg.com/1200x/76/9a/10/769a10cdeea6faac175855854ea75e41.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+            margin: 0;
+        }
+
+
+        .navbar {
+            background-color: rgb(58, 98, 46);
+            display: flex;
+            padding: 15px;
+        }
+
+
+        .navbar a {
+            color: rgb(250, 250, 250);
+            text-decoration: none;
+        }
+
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+            gap: 25px;
+        }
+
+
+        h1 {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.93);
+            color: rgb(58, 98, 46);
+
+            width: 300px;
+            margin: 35px auto 15px;
+
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+
+        h2 {
+            text-align: center;
+            color: rgb(41, 73, 34);
+        }
+
+
+        form {
+            text-align: left;
+
+            width: 250px;
+
+            margin: 10px auto;
+
+            padding: 35px 60px;
+
+            border-radius: 15px;
+
+            font-size: 18px;
+
+            background-color: rgba(253, 255, 237, 0.95);
+        }
+
+
+        h3 {
+            color: rgb(58, 98, 46);
+        }
+
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+
+            text-align: left;
+
+            margin: 10px 0;
+        }
+
+
+        .menu-item input {
+            margin-right: 10px;
+
+            width: 18px;
+            height: 18px;
+
+            accent-color: rgb(58, 98, 46);
+        }
+
+
+        button {
+            display: block;
+
+            margin: 20px auto;
+
+            color: white;
+
+            background-color: rgb(58, 98, 46);
+
+            border: none;
+
+            border-radius: 8px;
+
+            width: 100px;
+            height: 40px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        button:hover {
+            background-color: rgb(41, 73, 34);
+        }
+
+
+        #receipt_result {
+            width: 90%;
+            max-width: 500px;
+
+            margin: 25px auto 50px;
+
+            padding: 20px;
+
+            box-sizing: border-box;
+
+            background-color: rgba(255, 255, 255, 0.95);
+
+            border-radius: 15px;
+
+            line-height: 1.7;
+        }
+      
+         footer {
+         text-align: center;
+         color: white;
+         background-color: rgba(58, 98, 46, 0.9);
+         padding: 15px;
+         margin-top: 30px;
+        font-weight: bold;
+       }
+    </style>
+
+
+    <ul class="navbar">
+
+        <a href="index.html">Buldak Corner 🍜</a>
+
+        <ul class="nav-links">
+
+            <a href="index.html">Receipt</a>
+
+            <a href="sku.html">SKU Generator</a>
+
+        </ul>
+
+    </ul>
+
+    <br>
+
+    <h1>Buldak Corner 🍜</h1>
+
+    <h2>Menu:</h2>
+
+
+    <form>
+
+        <h3>Buldak</h3>
+
+        <div class="menu-item">
+            <input type="checkbox" id="buldakcarbonara">
+            Buldak Carbonara
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="buldak2xspicy">
+            Buldak 2x Spicy
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="buldakcheese">
+            Buldak Cheese
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="buldakcreamycarbonara">
+            Buldak Creamy Carbonara
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="buldakspicy">
+            Buldak Spicy
+        </div>
+
+
+        <h3>Drinks</h3>
+
+        <div class="menu-item">
+            <input type="checkbox" id="icedtea">
+            Iced Tea
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="freshmilk">
+            Fresh Milk
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="coke">
+            Coke
+        </div>
+
+
+        <h3>Desserts</h3>
+
+        <div class="menu-item">
+            <input type="checkbox" id="chocolateslice">
+            Chocolate Slice
+        </div>
+
+        <div class="menu-item">
+            <input type="checkbox" id="icecream">
+            Ice Cream
+        </div>
+
+    </form>
+
+
+    <button py-click="generate_receipt">
+        Order
+    </button>
+
+
+    <div id="receipt_result">
+    </div>
+
+    <footer>
+       Made by Kailey Gayas & Precious Dolormente
+    </footer>   
+
+    <py-script src="main.py"></py-script>
+
+</body>
+</html>
